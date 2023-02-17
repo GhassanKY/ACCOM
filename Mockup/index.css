@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+:root {
+    /*Colores principales background*/
+    --primary-background: #FFFFFF;
+    --secondary-background: #245085;
+    --tertiary-background: #122843;
+    --quaternary-background: #CED4E6B3;
+    --quinary-background: #24508521;
+    --senary-header-background: #00000019;
+
+
+    /*Color de boton primario*/
+    --primary-button-background: #58BAB0;
+
+    /*Colores Texto*/
+    --primary-text-color: #3F3F3F;
+    --secondary-text-color: #245085;
+    --tertiary-text-color: #FFFFFF;
+    --quaternary-text-color: #58BAB0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/*Clases Generales*/
+
+.align-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.img-mb {
+    width: 50%;
+}
+
+/*Estilo Boton General - Cambio de texto*/
+
+.primary-button {
+    width: 141px;
+    height: 52px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--primary-button-background);
+    color: var(--primary-button-text-color);
+    font-family: 'Questrial', sans-serif;
+    transition: background 0.5s ease-in-out;
+    background-image: linear-gradient(270deg, var(--primary-button-background) 31%, var(--secondary-background) 70%);
+    background-size: 400% 400%;
+    background-position: right;
+}
+
+.primary-button::before {
+    content: attr(data-text);
+    display: block;
+}
+
+.primary-button:hover::before {
+    opacity: 0;
+    display: none;
+}
+
+.primary-button::after {
+    content: var(--primary-button-content);
+    display: none;
+    opacity: 0;
+}
+
+.primary-button:hover::after {
+    opacity: 1;
+    display: block;
+}
+
+.primary-button:hover {
+    background: linear-gradient(90deg, var(--primary-button-background) 31%, var(--secondary-background) 70%);
+    background-position: left;
+}
+
+.ln-button {
+    --primary-button-content: "Learn More";
+    color: white;
+}
+
+.me-button {
+    --primary-button-content: "Me interesa";
+    color: white;
+}
+
+/*Segundo estilo de boton cambio de color*/
+
+.secondary-button {
+    width: 141px;
+    height: 52px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--primary-button-background);
+    color: var(--primary-background);
+    font-family: 'Questrial', sans-serif;
+}
+
+.secondary-button:hover {
+    background: linear-gradient(90deg, var(--primary-button-background) 31%, var(--secondary-background) 70%);
+}
+
+/*Clase Modal*/
+
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1;
+    text-align: center;
+}
+
+#modal-box {
+    width: 300px;
+    height: auto;
+    background-color: var(--primary-background);
+    display: inline-block;
+    position: relative;
+    top: 25%;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 30px var(--quaternary-background);
+}
+
+#modal-box p {
+    color: var(--secondary-text-color);
+    font-family: 'Questrial', sans-serif;
+    font-size: 20px;
+    padding: 20px;
+}
+
+#closeModal {
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+
+/*Titulo General*/
+.title {
+    color: var(--primary-background);
+    font-family: 'Questrial', sans-serif;
+    width: 300px;
+}
+
+/*Clases Header*/
+
+.hd {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--primary-background);
+    height: 85px;
+}
+
+/*Clases segunda seccion*/
+
+.blue-section {
+    background: linear-gradient(0deg, var(--tertiary-background) 40%, var(--secondary-background) 100%);
+    height: 680px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*CSS de Precio*/
+
+.oft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prc {
+    position: relative;
+    width: 100px;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prc span:nth-of-type(1) {
+    position: absolute;
+    left: 20px;
+    font-size: 60px;
+    font-family: 'Questrial', sans-serif;
+    font-weight: 700;
+    color: var(--primary-background);
+}
+
+.prc span:nth-of-type(2) {
+    position: absolute;
+    right: -10px;
+    top: 0px;
+    font-family: 'Questrial', sans-serif;
+    font-weight: 700;
+    color: var(--primary-background);
+}
+
+.prc span:nth-of-type(3) {
+    position: absolute;
+    top: 15px;
+    right: -10px;
+    font-size: 9px;
+    font-family: 'Questrial', sans-serif;
+    color: var(--primary-background);
+}
+
+/*Caja de contacto*/
+
+.inf {
+    background-color: var(--primary-background);
+    font-family: 'Questrial', sans-serif;
+    max-width: 452px;
+    height: 337px;
+    width: 100%;
+    border-radius: 23px;
+    box-shadow: 0px 0px 30px var(--quaternary-background);
+}
+
+.inf h3 {
+    color: var(--secondary-text-color);
+    font-size: 28px;
+    text-align: center;
+    width: 324px;
+    height: 65px;
+}
+
+#equis {
+    color: var(--secondary-text-color);
+    font-size: 25px;
+    font-weight: 900;
+    position: relative;
+    bottom: 10%;
+    left: 43%;
+}
+
+.inf form div {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/*Input clase de error y animacion*/
+
+.inp-contact {
+    width: 230px;
+    height: 47px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+.inp-contact:hover::placeholder {
+    text-indent: -50px;
+    transition: 300ms;
+}
+
+.inp-contact::placeholder {
+    text-indent: 0px;
+    transition: 300ms;
+}
+
+.inp-contact-error {
+    border: 2px solid red;
+}
+
+.inp-contact-error::placeholder {
+    color: red;
+}
+
+.inp-contact-correct {
+    border: 2px solid greenyellow
+}
+
+.inp-contact-correct::placeholder {
+    color: black
+}
+
+/*Clases tercera section*/
+
+.round-top {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    font-family: 'Questrial', sans-serif;
+}
+
+.round-top-color {
+    background-color: var(--primary-background);
+    height: 50px;
+    width: 100%;
+    top: -25px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.round-top h2 {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    text-align: center;
+    width: 350px;
+    color: var(--secondary-text-color);
+}
+
+.round-title {
+    padding-bottom: 66px;
+}
+
+.box-img {
+    width: 350px;
+    height: 311px;
+    margin: 5%;
+}
+
+/*Clases seccion de tarifas*/
+
+.trf-section {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+    font-family: Q;
+}
+
+.carousel-box {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.trf {
+    min-width: 312px;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    box-shadow: 0px 0px 30px var(--quaternary-background);
+    border-radius: 18px;
+    font-family: 'Questrial', sans-serif;
+    justify-content: space-between;
+    padding-bottom: 38px;
+
+}
+
+.trf-title {
+    padding-top: 50px;
+    text-align: center;
+    width: 350px;
+    padding-bottom: 66px;
+    font-family: 'Questrial', sans-serif;
+    color: var(--secondary-text-color);
+}
+
+.trf header {
+    width: 100%;
+    height: 50px;
+    border-radius: 18px 18px 0px 0px;
+    background-color: var(--quinary-background);
+    color: var(--secondary-text-color);
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+table tbody {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: black;
+    display: flex;
+    align-items: flex-start;
+}
+
+th {
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.slick-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.slick-list {
+    display: flex;
+}
+
+
+/*modificacion de precio*/
+
+.price span:nth-of-type(2) {
+    font-size: 60px;
+    color: var(--secondary-text-color);
+    font-weight: 800;
+}
+
+.price span:nth-of-type(3) {
+    color: var(--secondary-text-color);
+    font-size: 16px;
+    position: relative;
+    right: 5px;
+    top: 10;
+    top: -10px;
+}
+
+.price span:nth-of-type(1) {
+    color: var(--secondary-text-color);
+    font-size: 11px;
+    position: relative;
+    right: 50px;
+    top: 5px;
+}
+
+/*Responsive*/
+
+@media (min-width: 1000px) {
+    .trf-section {
+        justify-content: space-evenly;
+        height: 678px;
+    }
+}
+
+@media (min-width: 1300px) {
+
+    .hd {
+        flex-direction: row;
+        justify-content: flex-start;
+        position: relative;
+        width: fit-content;
+        left: 207px;
+    }
+
+    .blue-section {
+        flex-direction: row;
+        height: 598px;
+    }
+
+    .title {
+        width: 681px;
+        font-size: 42px;
+        position: relative;
+        top: -136px;
+        height: 103px;
+    }
+
+    .trf-title {
+        font-size: 32px;
+        height: 38px;
+        max-width: 1482px;
+        min-width: 1000px;
+        width: 100%;
+    }
+
+    .oft {
+        position: relative;
+        top: -108px;
+        height: 125px;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .round-top {
+        height: 641px;
+    }
+
+    .round-top h2 {
+        width: 100%;
+    }
+
+    .round-title {
+        min-width: 1000px;
+        max-width: 1386px;
+        font-size: 32px;
+        width: 100%;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .box-img {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .img-mb {
+        width: auto;
+    }
+}

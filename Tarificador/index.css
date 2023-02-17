@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600;1,700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.button-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 30%;
+}
+
+.button-align {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button-align button {
+    width: 341px;
+    height: 101px;
+    background-color: white;
+    border: 3px solid red;
+    border-radius: 8px;
+    font-weight: 700px;
+    font-size: 31px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+/*Tarifa y align*/
+
+#precio-seleccionado{
+    font-size: 167px;
+    color: red;
+    position: relative;
+    right: 34%;
+}
+
+.trf {
+    display: none;
+    justify-content: space-evenly;
+    width: 45%;
+}
+
+.box-prc {
+    width: 154px;
+    height: 62px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.prc.selected {
+    background-color: red;
+}
+
+.box-prc:hover {
+    background-color: rgba(255, 0, 0, 0.313);
+}
+.transition{
+    transition: 2s linear;
+}
+
